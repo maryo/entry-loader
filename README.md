@@ -9,5 +9,5 @@ A [webpack](https://webpack.github.io/) loader that creates an entry chunk for a
 ## Usage
 
 ```javascript
-var url = require('entry?name=file-[hash].js!./file');
+var url = require('entry-loader?name=file-[hash].js!./file');
 ```
