@@ -6,6 +6,7 @@ module.exports = function() {
 };
 
 module.exports.pitch = function(request) {
+  this.addDependency(request);
   var query = utils.parseQuery(this.query);
   var compiler = createCompiler(this, request, {
     filename: query.name
