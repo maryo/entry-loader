@@ -7,9 +7,9 @@ module.exports = function() {
 
 module.exports.pitch = function(request) {
   this.addDependency(request);
-  var query = utils.parseQuery(this.query);
+  var options = utils.getOptions(this);
   var compiler = createCompiler(this, request, {
-    filename: query.name
+    filename: utils.interpolateName(this, options.name, {context: options.context})
   });
   runCompiler(compiler, this.async());
 };
